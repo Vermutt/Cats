@@ -6,6 +6,7 @@ from io import BytesIO
 
 Allowed_tags = ["sleep", "jump", "fight", "black", "white", "siamese", "cute"]
 
+
 def load_image(url):
     try:
         response = requests.get(url)
@@ -21,7 +22,7 @@ def load_image(url):
 
 def open_new_window():
     tag = tag_combobox.get()
-    url_tag = f"https://rand.by/image/{tag}" if tag else "https://rand.by/image"
+    url_tag = f"https://cataas.com/cat/{tag}" if tag else "https://cataas.com/cat"
     img = load_image(url_tag)
 
     if img:
@@ -33,7 +34,6 @@ def open_new_window():
         label.image = img
 
 
-
 def exit():
     window.destroy()
 
@@ -41,7 +41,6 @@ def exit():
 window = Tk()
 window.title("Cats!")
 window.geometry("600x520")
-
 
 menu_bar = Menu(window)
 window.config(menu=menu_bar)
